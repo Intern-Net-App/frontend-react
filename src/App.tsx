@@ -67,9 +67,11 @@ function App() {
         {jobs.map((job) => (
           <div key={job.ID}>
             <h2>{job.JobTitle}</h2>
-            <p>{job.CompanyName}</p>
+            <a href={job.CompanyLink}>
+              <h3>{job.CompanyName}</h3>
+            </a>
             <p>{job.CompanyLocation}</p>
-            <a href={job.JobDetailUrl} target='_blank'>Job Details</a>
+            <a href={job.JobDetailUrl} target='_blank'>Apply</a>
           </div>
         ))}
       </div>
