@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import './App.css';
 
 interface Job {
   ID: string;
@@ -65,13 +66,13 @@ function App() {
       <h1>Job Postings</h1>
       <div>
         {jobs.map((job) => (
-          <div key={job.ID}>
+          <div key={job.ID} className="container">
             <h2>{job.JobTitle}</h2>
-            <a href={job.CompanyLink}>
+            <a href={job.CompanyLink} className='company'>
               <h3>{job.CompanyName}</h3>
             </a>
             <p>{job.CompanyLocation}</p>
-            <a href={job.JobDetailUrl} target='_blank'>Apply</a>
+            <a href={job.JobDetailUrl} target='_blank' className='primary-button'>Apply</a>
           </div>
         ))}
       </div>
